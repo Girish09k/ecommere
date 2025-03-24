@@ -1,0 +1,94 @@
+.list-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limit max width for larger screens */
+    margin: 30px auto; /* Center the component */
+    padding: 20px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.listproduct-format-main {
+    display: grid;
+    grid-template-columns: 0.8fr 2fr 1fr 1fr 1fr 0.5fr;
+    gap: 15px;
+    width: 100%;
+    padding: 15px 0;
+    color: #454545;
+    font-size: 0.95rem;
+    font-weight: 600;
+    align-items: center;
+}
+
+.listproduct-format {
+    font-weight: 500;
+}
+
+.listproduct-allproducts-image {
+    width: 100%;
+    max-width: 80px;
+    height: auto;
+    object-fit: cover;
+}
+
+.listproduct-remove-icon {
+    cursor: pointer;
+    margin: auto;
+    transition: transform 0.2s ease;
+}
+
+.listproduct-remove-icon:hover {
+    transform: scale(1.1);
+}
+
+.listproduct-allproducts {
+    width: 100%;
+    overflow-y: auto;
+    max-height: 600px; /* Adjust based on your design */
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+.listproduct-allproducts::-webkit-scrollbar {
+    width: 8px;
+}
+
+.listproduct-allproducts::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.listproduct-allproducts::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+@media (max-width: 800px) {
+    .list-product {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    .listproduct-format-main {
+        grid-template-columns: 0.8fr 1.5fr 0.8fr 0.8fr 0.8fr 0.5fr;
+        font-size: 0.8rem;
+        gap: 10px;
+    }
+
+    .listproduct-allproducts-image {
+        max-width: 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .listproduct-format-main {
+        grid-template-columns: 0.8fr 1.2fr 0.8fr 0.8fr;
+    }
+
+    .listproduct-format-main p:nth-child(5),
+    .listproduct-format-main p:nth-child(6) {
+        display: none; /* Hide category and remove on smaller screens */
+    }
+}
